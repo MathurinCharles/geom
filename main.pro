@@ -3,6 +3,8 @@ TARGET = yourAppName
 
 # add your source cpp files here 
 SOURCES += \
+    curve1DBezierParam.cpp \
+    curve1DBezier.cpp \
     main.cpp \
     mainWidget.cpp \
     toolsWidget.cpp \
@@ -25,6 +27,8 @@ HEADERS += \
     curve1D.h \
     curve2D.h \
     curve1DLinear.h \
+    curve1DBezierParam.h \
+    curve1DBezier.h \
     curve2DLinear.h \
     curve2DBezierBasic.h \
     curve2DBezier.h \

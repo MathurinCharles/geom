@@ -5,6 +5,8 @@
 #include "curve2DBezierBasic.h"
 #include "curve2DBezier.h"
 #include "curve1DLinear.h"
+#include "curve1DBezierParam.h"
+#include "curve1DBezier.h"
 
 Scene *Scene::_instance = NULL;
 
@@ -20,6 +22,8 @@ void Scene::initCurveBuilders() {
 // add 1D curve builders (functions) here
 void Scene::initFunctionBuilders() {
   addFunctionBuilder(new Curve1DLinearConstructor());
+  addFunctionBuilder(new Curve1DBezierParamConstructor());
+  addFunctionBuilder(new Curve1DBezierConstructor());
 }
 
 
