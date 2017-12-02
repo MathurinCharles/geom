@@ -30,6 +30,8 @@ HEADERS += \
     curve1DBezier.h \
     curve1DBezierParam.h \
     curve2DLinear.h \
+    curve2DBspline.h \
+    curve2DLinearClosed.h \
     curve2DBezier.h \
     curve2DCatmullRomClosed.h \
     animatedPoint.h

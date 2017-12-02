@@ -2,6 +2,8 @@
 
 // add all your types of 2D curves here
 #include "curve2DLinear.h"
+#include "curve2DLinearClosed.h"
+#include "curve2DBspline.h"
 #include "curve2DBezier.h"
 #include "curve1DLinear.h"
 #include "curve1DBezier.h"
@@ -15,7 +17,9 @@ using namespace std;
 // add 2D curve builders here
 void Scene::initCurveBuilders() {
   addCurveBuilder(new Curve2DLinearConstructor());
+  addCurveBuilder(new Curve2DLinearClosedConstructor());
   addCurveBuilder(new Curve2DBezierConstructor());
+  addCurveBuilder(new Curve2DBsplineConstructor());
   addCurveBuilder(new Curve2DCatmullRomClosedConstructor());
 }
 
