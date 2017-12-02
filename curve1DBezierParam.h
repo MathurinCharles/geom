@@ -8,16 +8,16 @@ class Curve1DBezierParam : public Curve1D {
  public:
  Curve1DBezierParam(const QString &name) : Curve1D(name) {}
  Curve1DBezierParam(Curve1D *curve,const QString &name) : Curve1D(curve,name) {}
-  
+
   QPainterPath path(float xmin,float xmax) {
     // TODO
     QPainterPath p;
 
-    // empty test 
-    if(empty()) 
+    // empty test
+    if(empty())
       return p;
 
-    // draw function 
+    // draw function
     for(unsigned int x=0;x<nbFrames();x++) {
         p.lineTo(x,evalAt(x));
     }
@@ -30,8 +30,6 @@ class Curve1DBezierParam : public Curve1D {
     unsigned int N = 10*nbPts();
     Vector2f controlPt;
     float t = x/(nbFrames()-1);
-    std::cout << "Value of the abcissa x : " << x << std::endl;
-    std::cout << "Value of the proportion x/nbFrames : " << t << std::endl;
     float OrdCasteljau[nbPts()][nbPts()];
     for(unsigned int j=0;j<nbPts();++j) {
         controlPt = _points[j];

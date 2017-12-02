@@ -12,9 +12,9 @@
 
 using namespace std;
 
-const QString MainWindow::_DEFAULT_FILE_NAME = "untitled";
-const QString MainWindow::_APPLICATION_NAME = "yourAppName";
-const QString MainWindow::_APPLICATION_EXTENSION = ".yan";
+const QString MainWindow::_DEFAULT_FILE_NAME = "Curves drawer";
+const QString MainWindow::_APPLICATION_NAME = "Appliduturfu";
+const QString MainWindow::_APPLICATION_EXTENSION = ".bg";
 QDir MainWindow::_CURRENT_PATH = QDir::currentPath();
 
 MainWindow::MainWindow()
@@ -40,16 +40,16 @@ MainWindow::MainWindow()
    sp1->setStretchFactor(1,10);
    sp2->setStretchFactor(0,8);
    sp2->setStretchFactor(1,1);
-   
+
   connect(_timer,SIGNAL(timeout()),this,SLOT(timerEvent()));
 
    setCentralWidget(sp1);
-   
+
    setCurrentFile("");
 }
 
 MainWindow::~MainWindow() {
-  // delete widgets here 
+  // delete widgets here
 }
 
 void MainWindow::timerEvent() {
@@ -163,7 +163,7 @@ void MainWindow::createMenus() {
   _fileMenu->addAction(_saveAct);
   _fileMenu->addSeparator();
   _fileMenu->addAction(_exitAct);
-  
+
   _editMenu = menuBar()->addMenu(tr("&Edit"));
   _editMenu->addAction(_copyAct);
   _editMenu->addAction(_pasteAct);
@@ -212,7 +212,7 @@ bool MainWindow::saveAs() {
 }
 
 void MainWindow::copy() {
-  cout << __FILE__ << " - " << __FUNCTION__ << ": TODO!" << endl;  
+  cout << __FILE__ << " - " << __FUNCTION__ << ": TODO!" << endl;
 }
 
 void MainWindow::paste() {
@@ -236,7 +236,7 @@ void MainWindow::about() {
 		 "( <a href='mailto:romain.vergne@inria.fr'>romain.vergne@inria.fr</a> ) <br>"
 		 "OTHER STUDENTS...<br>"
 		 );
-		 
+
   QMessageBox::about(this,"About",h);
 }
 

@@ -1,10 +1,8 @@
-# define your application name here 
+# define your application name here
 TARGET = yourAppName
 
-# add your source cpp files here 
+# add your source cpp files here
 SOURCES += \
-    curve1DBezierParam.cpp \
-    curve1DBezier.cpp \
     main.cpp \
     mainWidget.cpp \
     toolsWidget.cpp \
@@ -13,7 +11,9 @@ SOURCES += \
     animationWidgetItems.cpp \
     animationWidget.cpp \
     scene.cpp \
-    animatedPoint.cpp 
+    animatedPoint.cpp \
+    curve1DBezier.cpp \
+    curve1DBezierParam.cpp
 
 # add your header files here
 HEADERS += \
@@ -27,12 +27,12 @@ HEADERS += \
     curve1D.h \
     curve2D.h \
     curve1DLinear.h \
-    curve1DBezierParam.h \
     curve1DBezier.h \
+    curve1DBezierParam.h \
     curve2DLinear.h \
-    curve2DBezierBasic.h \
     curve2DBezier.h \
-    animatedPoint.h 
+    curve2DCatmullRomClosed.h \
+    animatedPoint.h
 
 TEMPLATE = app
 
