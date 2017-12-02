@@ -1,0 +1,17 @@
+animatedPoint.o
+animationWidgetItems.o
+animationWidget.o
+curve1DBezier.o
+curve1DBezierParam.o
+drawingWidgetItems.o
+drawingWidget.o
+main.o
+mainWidget.o
+moc_animationWidget.o
+moc_drawingWidget.o
+moc_mainWidget.o
+moc_toolsWidget.o
+scene.o
+toolsWidget.o
+Makefile
+yourAppName
