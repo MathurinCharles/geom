@@ -1,5 +1,5 @@
-#ifndef CURVE_2D_CubicHermiteSpline_H
-#define CURVE_2D_CubicHermiteSpline_H
+#ifndef CURVE_2D_CUBICHERMITESPLINE_H
+#define CURVE_2D_CUBICHERMITESPLINE_H
 
 #include "curve2D.h"
 
@@ -86,4 +86,4 @@ class Curve2DCubicHermiteSplineConstructor : public Curve2DConstructor {
 };
 
 
-#endif // CURVE_2D_CubicHermiteSpline_H
+#endif // CURVE_2D_CUBICHERMITESPLINE_H

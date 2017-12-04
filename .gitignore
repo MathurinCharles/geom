@@ -15,3 +15,5 @@ scene.o
 toolsWidget.o
 Makefile
 yourAppName
+.vscode/
+Roger

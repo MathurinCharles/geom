@@ -9,7 +9,7 @@
 #include "curve1DLinear.h"
 #include "curve1DBezier.h"
 #include "curve1DBezierParam.h"
-#include "curve2DCatmullRomClosed.h"
+#include "curve1DCubicHermiteSpline.h"
 #include "curve2DCubicHermiteSpline.h"
 #include "curve2DClosedCubicHermiteSpline.h"
 
@@ -24,7 +24,6 @@ void Scene::initCurveBuilders() {
   addCurveBuilder(new Curve2DBezierConstructor());
   addCurveBuilder(new Curve2DBsplineConstructor());
   addCurveBuilder(new Curve2DClosedBsplineConstructor());
-  addCurveBuilder(new Curve2DCatmullRomClosedConstructor());
   addCurveBuilder(new Curve2DCubicHermiteSplineConstructor());
   addCurveBuilder(new Curve2DClosedCubicHermiteSplineConstructor());
 }
@@ -32,6 +31,7 @@ void Scene::initCurveBuilders() {
 // add 1D curve builders (functions) here
 void Scene::initFunctionBuilders() {
   addFunctionBuilder(new Curve1DLinearConstructor());
+  addFunctionBuilder(new Curve1DCubicHermiteSplineConstructor());
   addFunctionBuilder(new Curve1DBezierConstructor());
   addFunctionBuilder(new Curve1DBezierParamConstructor());
 }

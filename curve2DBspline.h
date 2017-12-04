@@ -1,24 +1,17 @@
-#ifndef CURVE_2D_Bspline_H
-#define CURVE_2D_Bspline_H
+#ifndef CURVE_2D_BSPLINE_H
+#define CURVE_2D_BSPLINE_H
 
 #include "curve2D.h"
-#include <iostream>
 
 float tau(unsigned int j,unsigned int i,float t,unsigned int K,float ti[]){
-  ////std::cout << " - " << "Premier: " << i << " - " << "Deuxième: " << i+K-j << std::endl;
   return (t-ti[i])/(ti[i+K-j]-ti[i]);
 }
 
 Vector2f Pjit(unsigned int j,unsigned int i,float t, Vector2f CP[],unsigned int K,float ti[]){
-  ////std::cout << "________________________Valeur: " << i << std::endl;
   if (j==0) return CP[i];
   return (1-tau(j,i,t,K,ti)) * Pjit(j-1, i-1, t, CP, K, ti) + tau(j,i,t,K,ti) * Pjit(j-1, i, t, CP, K, ti);
 }
 
-/* float omega(unsigned int i,unsigned int k,float t,float tiTable[],unsigned int n){
-  if (tiTable[i]<tiTable[i+k]) return (t-tiTable[i])/(tiTable[i+k]-tiTable[i]);
-  else return 0;
-} */
 
 class Curve2DBspline : public Curve2D {
  public:
@@ -36,7 +29,6 @@ class Curve2DBspline : public Curve2D {
     unsigned int k = 3;
     Vector2f CP[nbPts()+1];
     float knots[nbPts()+k];
-    //std::cout << "KNOTS :" << std::endl;
     for (unsigned int p=0;p<k-1;++p){
       knots[p] = 0;
       knots[nbPts()+k-1+p] = nbPts()- 1;
@@ -44,25 +36,22 @@ class Curve2DBspline : public Curve2D {
     for (unsigned int i=0;i<nbPts();++i){
       knots[i+k-1] = i;
     }
-    //std::cout << std::endl << "_________________________________" << std::endl;
+
     Vector2f pt = evalAnimPt(get(0),frame);
     p.moveTo(pt[0],pt[1]);
     CP[0] = pt;
-    //std::cout << "CP :" << std::endl;
+
     for (unsigned int i=1;i<nbPts();++i){
       CP[i] = evalAnimPt(get(i),frame);
-      //std::cout << CP[i] << std::endl;
+
     }
     CP[nbPts()] = CP[nbPts()-1];
-    //std::cout << std::endl << "______-------------------________" << std::endl;
+
     
 
     unsigned int l = 0;
     for (float t = 0.001;t<knots[nbPts()+k-1];t+=knots[nbPts()+k-1]/N){
       while (l<nbPts()+k-1 && !(t>=knots[l] && t<knots[l+1])) l++;
-      ////std::cout << "l = " << l << " and t = " << t << std::endl;
-      ////std::cout << "Limite: " << nbPts()+k-1 << std::endl;
-      ////std::cout << "________________________Limite: " << nbPts()-1 << std::endl;
       pt =  Pjit(k-1, l, t, CP, k, knots);
       p.lineTo(pt[0],pt[1]);
     }
@@ -80,4 +69,4 @@ class Curve2DBsplineConstructor : public Curve2DConstructor {
 };
 
 
-#endif // CURVE_2D_Bspline_H
+#endif // CURVE_2D_BSPLINE_H

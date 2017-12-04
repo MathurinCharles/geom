@@ -13,7 +13,7 @@
 using namespace std;
 
 const QString MainWindow::_DEFAULT_FILE_NAME = "Curves drawer";
-const QString MainWindow::_APPLICATION_NAME = "Appliduturfu";
+const QString MainWindow::_APPLICATION_NAME = "ROGER";
 const QString MainWindow::_APPLICATION_EXTENSION = ".bg";
 QDir MainWindow::_CURRENT_PATH = QDir::currentPath();
 

@@ -1,12 +1,12 @@
-#ifndef CURVE_2D_CubicHermiteSpline_H
-#define CURVE_2D_CubicHermiteSpline_H
+#ifndef CURVE_2D_CUBICHERMITESPLINE_H
+#define CURVE_2D_CUBICHERMITESPLINE_H
 float h00(float t){ return 2*t*t*t - 3*t*t + 1 ;};
 float h10(float t){ return t*t*t - 2*t*t + t ;};
 float h01(float t){ return -2*t*t*t + 3*t*t ;};
 float h11(float t){ return t*t*t - t*t ;};
 #endif
-#ifndef CURVE_2D_ClosedCubicHermiteSpline_H
-#define CURVE_2D_ClosedCubicHermiteSpline_H
+#ifndef CURVE_2D_CLOSEDCUBICHERMITESPLINE_H
+#define CURVE_2D_CLOSEDCUBICHERMITESPLINE_H
 
 #include "curve2D.h"
 

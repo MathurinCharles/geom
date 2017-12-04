@@ -1,5 +1,5 @@
 # define your application name here
-TARGET = yourAppName
+TARGET = Roger
 
 # add your source cpp files here
 SOURCES += \
@@ -29,12 +29,12 @@ HEADERS += \
     curve1DLinear.h \
     curve1DBezier.h \
     curve1DBezierParam.h \
+    curve1DCubicHermiteSpline.h \
     curve2DLinear.h \
     curve2DBspline.h \
     curve2DClosedBspline.h \
     curve2DLinearClosed.h \
     curve2DBezier.h \
-    curve2DCatmullRomClosed.h \
     curve2DCubicHermiteSpline.h \
     curve2DClosedCubicHermiteSpline.h \
     animatedPoint.h
