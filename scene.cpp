@@ -4,11 +4,14 @@
 #include "curve2DLinear.h"
 #include "curve2DLinearClosed.h"
 #include "curve2DBspline.h"
+#include "curve2DClosedBspline.h"
 #include "curve2DBezier.h"
 #include "curve1DLinear.h"
 #include "curve1DBezier.h"
 #include "curve1DBezierParam.h"
 #include "curve2DCatmullRomClosed.h"
+#include "curve2DCubicHermiteSpline.h"
+#include "curve2DClosedCubicHermiteSpline.h"
 
 Scene *Scene::_instance = NULL;
 
@@ -20,7 +23,10 @@ void Scene::initCurveBuilders() {
   addCurveBuilder(new Curve2DLinearClosedConstructor());
   addCurveBuilder(new Curve2DBezierConstructor());
   addCurveBuilder(new Curve2DBsplineConstructor());
+  addCurveBuilder(new Curve2DClosedBsplineConstructor());
   addCurveBuilder(new Curve2DCatmullRomClosedConstructor());
+  addCurveBuilder(new Curve2DCubicHermiteSplineConstructor());
+  addCurveBuilder(new Curve2DClosedCubicHermiteSplineConstructor());
 }
 
 // add 1D curve builders (functions) here

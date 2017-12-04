@@ -31,9 +31,12 @@ HEADERS += \
     curve1DBezierParam.h \
     curve2DLinear.h \
     curve2DBspline.h \
+    curve2DClosedBspline.h \
     curve2DLinearClosed.h \
     curve2DBezier.h \
     curve2DCatmullRomClosed.h \
+    curve2DCubicHermiteSpline.h \
+    curve2DClosedCubicHermiteSpline.h \
     animatedPoint.h
 
 TEMPLATE = app
